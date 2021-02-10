@@ -15,7 +15,7 @@ spring:
     name: customer-service
 
 datasource:
-    url: jdbc:mysql://b86b9d06611a8f:ca603c73@us-cdbr-east-03.cleardb.com/heroku_d81b154190a08a1?reconnect=true
+    url: jdbc:${CLEARDB_DATABASE_URL}
     driver-class-name: com.mysql.jdbc.Driver
     hikari:
       maximum-pool-size: 10
