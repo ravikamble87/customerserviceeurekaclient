@@ -6,7 +6,7 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: https://herokueurekaserviceanddis.herokuapp.com/eureka
+      defaultZone: https://localhost:8080/eureka
     instance:
     preferIpAddress: true
 
@@ -15,15 +15,13 @@ spring:
     name: customer-service
 
 datasource:
-    url: jdbc:h2:file:/tmp/testdb;AUTO_SERVER=TRUE
-    username: sa
-    password: password
-    driver-class-name: org.h2.Driver
+    url: jdbc:mysql://b86b9d06611a8f:ca603c73@us-cdbr-east-03.cleardb.com/heroku_d81b154190a08a1?reconnect=true
+    driver-class-name: com.mysql.jdbc.Driver
     hikari:
       maximum-pool-size: 10
 
 jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
+    database-platform: org.hibernate.dialect.MySQLDialect
     show-sql: true
     format-sql: true
 
