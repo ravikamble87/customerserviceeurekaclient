@@ -6,30 +6,21 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: https://localhost:8080/eureka
-    instance:
-    preferIpAddress: true
+      defaultZone: https://herokueurekaserviceanddis.herokuapp.com
 
 spring:
   application:
     name: customer-service
-
-datasource:
-    url: jdbc:${CLEARDB_DATABASE_URL}
-    driver-class-name: com.mysql.jdbc.Driver
-    hikari:
-      maximum-pool-size: 10
-
-jpa:
-    database-platform: org.hibernate.dialect.MySQLDialect
+  datasource:
+    url: jdbc:mysql://${DBHOSTNAME}:3306/${DBSCHEMA}
+    username: ${DBUSERNAME}
+    password: ${DBPASSWORD}
+    hikari: 
+     maximum-pool-size: 10
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
     show-sql: true
-    format-sql: true
-
-h2:
-    console:
-      enabled: true
-
-liquibase:
+  liquibase:
     enabled: true
     change-log: database/liquibase-changelog.xml
 
