@@ -5,8 +5,10 @@ server:
 
 eureka:
   client:
+    registerWithEureka: true
+    fetchRegistry: true
     serviceUrl:
-      defaultZone: https://herokueurekaserviceanddis.herokuapp.com
+      defaultZone: https://herokueurekaserviceanddis.herokuapp.com/eureka
 
 spring:
   application:
